@@ -24,6 +24,7 @@ page:
     # Top navigation bar.
     menu:
       - { text: "Proyectos", url: "/proyectos" }
+      - { text: "Foro", url: "https://groups.google.com/forum/#!forum/golang-mx" }
 
     # Top-right navigation helper.
     menu_pull:
