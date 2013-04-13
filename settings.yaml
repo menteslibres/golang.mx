@@ -1,0 +1,30 @@
+# Configuration file for Luminos.     https://menteslibres.net/luminos
+#
+#
+# You are viewing a YAML formatted file, read more about the format
+# at http://www.yaml.org.
+#
+# Note: Use two space indentations instead of the \t character.
+#
+
+# SERVER CONFIGURATION
+# Changing server settings requires restart.
+server:
+
+  # The IPv4 or IPv6 address to bind to.
+  bind: "127.0.0.1"
+
+  # Port to use.
+  port: 9100
+
+  # Use "fastcgi" to start a FastCGI server or "standalone" to start
+  # a HTTP server instead.
+  type: "standalone"
+
+# VIRTUAL HOSTS CONFIGURATION
+# Changing virtual hosts does not require a restart.
+hosts:
+
+  # Servir éste directorio.
+  default: "."
+

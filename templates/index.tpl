@@ -5,10 +5,6 @@
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-    <meta name="go-import" content="golang.mx/gosexy/db git https://github.com/gosexy/db">
-    <meta name="go-import" content="golang.mx/gosexy/canvas git https://github.com/gosexy/canvas">
-    <meta name="go-import" content="golang.mx/gosexy/checksum git https://github.com/gosexy/checksum">
-
     <link href='http://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
@@ -29,88 +25,19 @@
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <script type="text/javascript" src="http://get.jsfoo.org/jquery.js"></script>
-    <script type="text/javascript" src="http://get.jsfoo.org/jquery.foo.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
-    <link rel="stylesheet" href="http://static.hckr.org/normalize/normalize.css" />
+    <link rel="stylesheet" href="//menteslibres.net/static/normalize/normalize.css" />
 
-    <link rel="stylesheet" href="http://static.hckr.org/bootstrap/css/bootstrap.css" />
-    <link rel="stylesheet" href="http://static.hckr.org/bootstrap/css/bootstrap-responsive.css" />
+    <link rel="stylesheet" href="//menteslibres.net/static/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="//menteslibres.net/static/bootstrap/css/bootstrap-responsive.css" />
 
-    <!--
-    <link rel="stylesheet" href="http://static.hckr.org/google-code-prettify/prettify.css" />
-    <script type="text/javascript" src="http://static.hckr.org/google-code-prettify/prettify.js"></script>
-    -->
+    <link rel="stylesheet" href="//menteslibres.net/static/highlightjs/styles/solarized_dark.css">
+    <script src="//menteslibres.net/static/highlightjs/highlight.pack.js"></script>
 
-    <link rel="stylesheet" href="http://static.hckr.org/highlightjs/styles/solarized_dark.css">
-    <script src="http://static.hckr.org/highlightjs/highlight.pack.js"></script>
-    <!--
-    <script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
-    -->
-
+    <script src="//menteslibres.net/luminos/js/main.js"></script>
 
     <link rel="stylesheet" href="/styles.css" />
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <script type="text/javascript">
-      $(document.body).ready(
-        function() {
-          // Code (marking code blocks for prettyPrint)
-          var code = $('code');
-
-          for (var i = 0; i < code.length; i++) {
-            var el = $(code[i])
-            var className = el.attr('class');
-            if (className) {
-              el.addClass('language-'+className);
-            }
-          };
-
-          // An exception, LaTeX blocks.
-          var code = $('code.latex');
-
-          for (var i = 0; i < code.length; i++) {
-            var el = $(code[i])
-            var img = $('<img>', { 'src': 'http://phibin.com/api/render?snippet='+encodeURIComponent(el.html()) });
-            img.insertBefore(el);
-            el.hide();
-          };
-
-          // Starting prettyPrint.
-          //prettyPrint();
-          hljs.initHighlightingOnLoad();
-
-          // Tables without class
-
-          $('table').each(
-            function(i, el) {
-              if (!$(el).attr('class')) {
-                $(el).addClass('table');
-              };
-            }
-          );
-
-          // Navigation
-          var links = $('ul.menu li').removeClass('active');
-
-          for (var i = 0; i < links.length; i++) {
-            var a = $(links[i]).find('a');
-            if (a.attr('href') == document.location.pathname) {
-              $(links[i]).addClass('active');
-            };
-          };
-
-        }
-      );
-      /*
-      $(document).ready(function() {
-        $('pre code').each(function(i, e) {
-          hljs.highlight($(e).attr('class'), e.innerHTML);
-        });
-      });
-      */
-    </script>
 
     <style type="text/css">
       .navbar .brand {

@@ -1,8 +1,49 @@
 # golang.mx
 
-Source code of the golang.mx site.
+Código fuente del sitio del [grupo de usuarios Go en México][1].
 
-> Copyright (c) 2013 José Carlos Nieto, http://xiam.menteslibres.org/
+## Instalación
+
+Instala [Go](http://golang.org).
+
+[Descarga][2] o compila *Luminos*.
+
+```
+$ go get menteslibres.net/luminos
+```
+
+Clona el repo a `~/projects/golang.mx`, si deseas puedes usar la URL de tu fork
+o jugar con `git remote`. Estas instrucciones suponen que se utiliza un fork.
+
+```
+$ cd ~/projects
+$ go get git@github.com:menteslibres/golang.mx.git
+...
+Resolving deltas: 100% (3/3), done.
+```
+
+El proyecto incluye un `settings.yaml` que puede ser cargado por [Luminos][3],
+esta configuración pondrá a Luminos en modo *standalone*, por lo que no será
+necesario un servidor web adicional.
+
+```
+$ cd ~/projects/golang.mx
+$ ls
+markdown/  README.md  settings.yaml  site.yaml  templates/  webroot/
+$ luminos -c settings.yaml run
+...
+2013/04/13 04:30:27 Routing: default -> .
+2013/04/13 04:30:27 Starting HTTP server. Listening at 127.0.0.1:9100.
+```
+
+Abre [127.0.0.1:9100](http://127.0.0.1:9100) en tu browser y
+[resuelve una tarea](https://github.com/menteslibres/golang.mx/issues).
+
+[1]: http://golang.mx
+[2]: https://menteslibres.net/luminos/download
+[3]: https://menteslibres.net/luminos
+
+> Copyright (c) 2013 Autores de golang.mx.
 >
 > Permission is hereby granted, free of charge, to any person obtaining
 > a copy of this software and associated documentation files (the
