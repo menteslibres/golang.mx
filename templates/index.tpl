@@ -35,7 +35,6 @@
     <link rel="stylesheet" href="http://static.hckr.org/normalize/normalize.css" />
 
     <link rel="stylesheet" href="http://static.hckr.org/bootstrap/css/bootstrap.css" />
-    <link rel="stylesheet" href="http://static.hckr.org/bootstrap/css/bootstrap-responsive.css" />
 
     <!--
     <link rel="stylesheet" href="http://static.hckr.org/google-code-prettify/prettify.css" />
@@ -50,8 +49,6 @@
 
 
     <link rel="stylesheet" href="/styles.css" />
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <script type="text/javascript">
       $(document.body).ready(
