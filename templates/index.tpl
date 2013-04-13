@@ -30,7 +30,6 @@
     <link rel="stylesheet" href="//menteslibres.net/static/normalize/normalize.css" />
 
     <link rel="stylesheet" href="//menteslibres.net/static/bootstrap/css/bootstrap.css" />
-    <link rel="stylesheet" href="//menteslibres.net/static/bootstrap/css/bootstrap-responsive.css" />
 
     <link rel="stylesheet" href="//menteslibres.net/static/highlightjs/styles/solarized_dark.css">
     <script src="//menteslibres.net/static/highlightjs/highlight.pack.js"></script>
