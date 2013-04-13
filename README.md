@@ -4,15 +4,15 @@ Código fuente del sitio del [grupo de usuarios Go en México][1].
 
 ## Instalación
 
-Instala [Go](http://golang.org).
+1. Instala [Go](http://golang.org).
 
-[Descarga][2] o compila *Luminos*.
+2. [Descarga][2] o compila *Luminos*.
 
 ```
 $ go get menteslibres.net/luminos
 ```
 
-Clona el repo a `~/projects/golang.mx`, si deseas puedes usar la URL de tu fork
+3. Clona el repo a `~/projects/golang.mx`, si deseas puedes usar la URL de tu fork
 o jugar con `git remote`. Estas instrucciones suponen que se utiliza un fork.
 
 ```
@@ -22,7 +22,7 @@ $ go get git@github.com:menteslibres/golang.mx.git
 Resolving deltas: 100% (3/3), done.
 ```
 
-El proyecto incluye un `settings.yaml` que puede ser cargado por [Luminos][3],
+4. El proyecto incluye un `settings.yaml` que puede ser cargado por [Luminos][3],
 esta configuración pondrá a Luminos en modo *standalone*, por lo que no será
 necesario un servidor web adicional.
 
@@ -36,7 +36,7 @@ $ luminos -c settings.yaml run
 2013/04/13 04:30:27 Starting HTTP server. Listening at 127.0.0.1:9100.
 ```
 
-Abre [127.0.0.1:9100](http://127.0.0.1:9100) en tu browser y
+5. Abre [127.0.0.1:9100](http://127.0.0.1:9100) en tu browser y
 [resuelve una tarea](https://github.com/menteslibres/golang.mx/issues).
 
 [1]: http://golang.mx
