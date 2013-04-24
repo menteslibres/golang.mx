@@ -2,6 +2,12 @@
 
 Ésta es la comunidad de usuarios [Go][1] en México.
 
+## Cambios recientes
+
+* `2013-04-23` Se agregó un [tutorial de instalación de Go](http://golang.mx/tutoriales/como-instalar-golang).
+
+## Contribuye
+
 Contribuir al sitio y a la comunidad es sencillo:
 
 1. Haz un [fork][2].
@@ -11,6 +17,7 @@ Contribuir al sitio y a la comunidad es sencillo:
 
 Si tienes dudas pregunta en el [foro][5], en el canal #golang.mx de
 irc.freenode.net, en la comunidad de [Go+ México][8] o a [@golangmx][6].
+
 
 [1]: http://golang.org
 [2]: https://github.com/menteslibres/golang.mx

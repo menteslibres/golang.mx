@@ -24,6 +24,7 @@ page:
     # Top navigation bar.
     menu:
       - { text: "Proyectos", url: "/proyectos" }
+      - { text: "Tutoriales", url: "/tutoriales" }
       - { text: "Foro", url: "https://groups.google.com/forum/#!forum/golang-mx" }
       - { text: "Go+", url: "https://plus.google.com/communities/110325783890611262108" }
 
