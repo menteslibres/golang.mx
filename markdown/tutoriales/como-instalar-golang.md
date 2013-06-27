@@ -128,12 +128,12 @@ crear:
 ```sh
 $ go run hello.go
 Hello world!
-```sh
+```
 
 También podemos utilizar `go build hello.go` para compilarlo:
 ```sh
 $ go build hello.go
-```sh
+```
 
 Esto creará un ejecutable de nombre "hello". Escribamos `./hello` para ejecutarlo:
 
