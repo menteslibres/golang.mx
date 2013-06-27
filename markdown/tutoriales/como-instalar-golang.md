@@ -25,7 +25,7 @@ El bloque de arriba indica mandar a terminal la instrucción `echo hola`. Observ
 que no se debe considerar el símbolo `$` como parte del comando y que la
 respuesta del comando `hola` no tiene un símbolo `$`.
 
-Finamente, los comentarios dentro de bloques de terminal comienzan con un
+Finalmente, los comentarios dentro de bloques de terminal comienzan con un
 símbolo `#`.
 
 ```
@@ -45,32 +45,32 @@ escoge el más apropiado para tu sistema (de los que terminan con extensión
 `.tar.gz`).
 
 Al terminal la descarga abrimos una terminal, nos ubicamos en el directorio
-donde se descargó el paquete y lo descomprimimos al directorio `/usr/lib`
+donde se descargó el paquete y lo descomprimimos al directorio `/usr/local`
 (con permisos de administrador o como *root*).
 
 ```sh
 $ cd ~/Downloads
-$ ls go1.0.3.linux-amd64.tar.gz
-$ sudo tar -xvzf go1.0.3.linux-amd64.tar.gz -C /usr/lib
+$ ls go1.1.1.linux-amd64.tar.gz
+$ sudo tar -C /usr/local -xzvf go1.1.linux-amd64.tar.gz
 ...
 ```
 
 Ahora comprobamos que el programa `go` funciona llamándolo con su ruta completa:
 
 ```sh
-$ /usr/lib/go/bin/go version
-go version go1.0.3
+$ /usr/local/go/bin/go version
+go version go1.1.1
 ```
 
-Si tenemos una respuesta como `go version go1.0.3` podemos concluir que [Go][1]
+Si tenemos una respuesta similar a `go version go1.1.1` podemos concluir que [Go][1]
 está correctamente instalado.
 
 Eso ha sido sencillo :).
 
-## Variables de entorno, $GOPATH y $GOROOT.
+## Variables de entorno
 
 Ahora que ya tienes las herramientas de [Go][1] instaladas probablemente creas
-que escribir la ruta completa `/usr/lib/go/bin/go` puede ser un poco incómodo,
+que escribir la ruta completa `/usr/local/go/bin/go` puede ser un poco incómodo,
 sería más sencillo invocar el programa `go` sólo por su nombre:
 
 ```sh
@@ -84,20 +84,22 @@ que ésto funcione necesitamos agregar la ruta de los binarios de [Go][1] a la
 variable de entorno `$PATH`.
 
 Utilizamos el comando `export` para agregar a la variable `$PATH` el valor
-`:/usr/lib/go/bin` que es donde sabemos se encuentra el comando `go`.
+`:/usr/local/go/bin` que es donde sabemos se encuentra el comando `go`.
 
 ```sh
 # Exportamos
-$ export PATH=$PATH:/usr/lib/go/bin
+$ export PATH=$PATH:/usr/local/go/bin
 # Ejecutamos go
-$ go
-go version go1.0.3
+$ go version
+go version go1.1.1
 ```
 
 Este valor de `$PATH` se cambia de manera temporal, si cierras la terminal
-o abres otra habrá que repetir el `export`.
+o abres otra habrá que repetir el comando `export`.
 
-En la misma terminal intentemos compilar un programa de `go`. Guardemos el
+## Ejecutando y compilando tu primer programa en Go
+
+En la misma terminal intentemos crear un programa de `go`. Guardemos el
 código siguiente como `~/tmp/hello.go`
 
 ```go
@@ -120,21 +122,36 @@ Cambiemos al directorio `~/tmp` en nuestra terminal, donde guardamos `hello.go`.
 $ cd ~/tmp
 ```
 
-Utilicemos `go build hello.go` para compilarlo, esto creará un ejecutable de
-nombre "hello". Escribamos `./hello` para ejecutarlo:
+Haremos nuestra primera prueba haciendo que go interprete el script que acabamos de
+crear:
 
 ```sh
+$ go run hello.go
+Hello world!
+```sh
+
+También podemos utilizar `go build hello.go` para compilarlo:
+```sh
 $ go build hello.go
+```sh
+
+Esto creará un ejecutable de nombre "hello". Escribamos `./hello` para ejecutarlo:
+
+```sh
+# Compilamos
+$ go build hello.go
+# Revisamos se haya creado un binario usando el comando file
 $ file hello
 hello: ELF 64-bit LSB  executable, x86-64, version 1 (SYSV), statically linked, not stripped
+# Ejecutamos
 $ ./hello
 Hello world!
 ```
 
-¡Muy bien! Has compilado tu primer programa en [Go][1] utilizando
-[*go tools*][4], continua el tutorial sin cerrar la terminal en la que estás.
+¡Muy bien! Has ejecutado y compilado tu primer programa en [Go][1] utilizando
+[*go tools*][4], continúa el tutorial sin cerrar la terminal en la que estás.
 
-## Trabajando con `go tools`
+## Trabajando con `go tools` y $GOPATH
 
 Uno de los principales comandos de [Go][1] es `go get`.
 
@@ -148,14 +165,16 @@ en la URL <https://github.com/menteslibres/gotestpkg>.
 
 ```
 $ go get github.com/menteslibres/gotestpkg
-package github.com/menteslibres/gotestpkg: mkdir /usr/lib/go/site/src: permission denied
+package github.com/menteslibres/gotestpkg: cannot download, $GOPATH not set. 
+For more details see: go help gopath
 ```
 
-El primer mensaje que nos da `go get` es un permiso denegado para modificar el
-contenido de `/usr/lib/go/site/src`, esto es correcto, un usuario normal no
-tiene permisos suficientes para modificar `/usr/lib/`. Lo que tenemos que hacer
-es definir un directorio del usuario donde *go tools* pueda guardar lo que
-necesita, por convención utilicemos `$HOME/go` o `~/go`.
+El primer mensaje que nos da `go get` es un error al intentar descargar el paquete. 
+Una convención utilizada por las herramientas go tools es que deberá tener 
+establecido un directorio donde se puedan almacenar todos los paquetes 
+adicionales que se vayan a usar, así como una variable de entorno $GOPATH 
+apuntándolo. Generalmente se utiliza el directorio `$HOME/go` o `~/go`, a 
+continuación crearemos dicho directorio, así como también definiremos $GOPATH:
 
 ```sh
 # Creamos el directorio $HOME/go.
@@ -165,6 +184,8 @@ $ mkdir ~/go
 $ mkdir ~/go/bin
 $ mkdir ~/go/pkg
 $ mkdir ~/go/src
+# o si lo prefieres, en una sola línea...
+# mkdir -p ~/go/{bin,pkg,src}
 # Definimos la variable $GOPATH que será utilizada
 # por go tools.
 $ export GOPATH=$HOME/go
@@ -174,7 +195,7 @@ $ export PATH=$PATH:$GOPATH/bin
 
 Ahora intentemos el mismo ejemplo:
 
-```
+```sh
 $ go get github.com/menteslibres/gotestpkg
 $ gotestpkg
 Hello world!
@@ -185,7 +206,7 @@ Hello world!
 Observa que además de obtener y compilar el ejemplo, `go get` también copió
 el ejecutable a `$GOPATH/bin`:
 
-```
+```sh
 $ ls $GOPATH/bin
 gotestpkg
 ```
@@ -193,7 +214,7 @@ gotestpkg
 Y podemos ejecutarlo por su nombre puesto que `$GOPATH/bin` ya es parte de
 `$PATH`.
 
-## Hacer cambios a entorno permanentes
+## Hacer cambios permanentes al entorno de trabajo
 
 Las variables de sistema definidas con `export` sólo son válidas en la
 terminal actual. Para hacerlas válidas en cualquier terminal que abramos
@@ -201,7 +222,7 @@ es necesario agregarlas al archivo de inicialización de nuestra *shell*.
 
 Para saber cuál *shell* tienes ejecuta:
 
-```
+```sh
 $ echo $SHELL
 /usr/bin/zsh
 ```
@@ -216,12 +237,12 @@ Dependiendo el nombre de tu shell el archivo de inicio es el que se menciona:
 * `/usr/bin/sh`, para sh y otros: `$HOME/.profile`
 
 Supongamos que tu archivo de inicio es `$HOME/.bashrc`, lo que debemos hacer
-es abrir `~/.bashrc` con un editor de texto y agregar las siguientes líneas al
-final del archivo:
+es abrir `~/.bashrc` con un editor de texto (por ejemplo usando: `nano ~/.bashrc`)
+ y agregar las siguientes líneas al final del archivo:
 
 ```sh
 # ¿Donde están las go tools?
-export GOROOT=/usr/lib/go
+export GOROOT=/usr/local/go
 # ¿Cuál es nuestro directorio local de Go?
 export GOPATH=$HOME/go
 # Modificamos $PATH por comodidad.
@@ -235,9 +256,9 @@ es abrir otra terminal y ejecutar `go version`.
 
 ```
 $ go version
-go version go1.0.3
+go version go1.1.1 linux/amd64
 $ echo $GOROOT
-/usr/lib/go
+/usr/local/go
 $ echo $GOPATH
 /home/gouser/go
 ```
@@ -247,11 +268,14 @@ Con esto se termina la primer instalación de [Go][1] :-).
 Puedes continuar con [How to write Go Code][6] y al término seguir con
 [Effective Go][5].
 
-## Alternativa de instalación
+## Alternativas de instalación
 
-La alternativa más rápida es utilizar el instalador para Windows
-(extensión `.msi`) o para OSX (extensión `.pkg`), utilizar un instalador se
-recomienda cuando ya se entiende el concepto de `$GOPATH` y `$GOROOT`.
+También se pueden usar los instaladores según el sistema operativo: en
+Microsoft Windows (extensión `.msi`) o para Mac OSX (extensión `.pkg`). 
+A la fecha [Go][1] ya se está integrando a las distribuciones de Linux/BSD
+ a través de sus administradores de paquetes: apt-get, yum, add_pkg, etc. 
+ Deberías tomar en cuenta que quizás tengas que incluir las variables $GOPATH y 
+$GOROOT mencionadas en éste tutorial.
 
 ## Lecturas recomendadas
 
