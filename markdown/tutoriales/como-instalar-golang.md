@@ -273,7 +273,7 @@ Puedes continuar con [How to write Go Code][6] y al término seguir con
 También se pueden usar los instaladores según el sistema operativo: en
 Microsoft Windows (extensión `.msi`) o para Mac OSX (extensión `.pkg`). 
 A la fecha [Go][1] ya se está integrando a las distribuciones de Linux/BSD
- a través de sus administradores de paquetes: apt-get, yum, add_pkg, etc. 
+ a través de sus administradores de paquetes: apt-get, yum, pkg_add, etc. 
  Deberías tomar en cuenta que quizás tengas que incluir las variables $GOPATH y 
 $GOROOT mencionadas en éste tutorial.
 
