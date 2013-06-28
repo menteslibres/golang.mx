@@ -86,7 +86,7 @@
         <img src="/images/gophers.png" />
         <h1>golang.mx</h1>
         <p>
-          Comunidad de usuarios <a href="_blank" target="_blank">Go</a> (golang) en México.
+          Comunidad de usuarios <a href="http://golang.org/" target="_blank">Go</a> (golang) en México.
         </p>
         <p class="pull-right">
           <a href="/proyectos" class="btn btn-primary btn-large">

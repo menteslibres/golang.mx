@@ -4,21 +4,22 @@ Código fuente del sitio del [grupo de usuarios Go en México][1].
 
 ## Instalación
 
-Antes de instalar, asegúrate de tener [Go](http://golang.org).
+Antes de instalar, asegúrate de tener [Go][].
 
 ```
 $ go version
-go version go1.0.3
+go version go1.1.1 linux/amd64
 ```
 
-Ahora [descarga][2] o compila *Luminos*.
+Si no lo tuvieras instalado puedes revisar el [tutorial][] que ponemos a tu diposición con instrucciones para tener las herramientas [Go][] en tu ambiente de desarrollo.
+
+A continuación [descarga][2] o compila *Luminos* (Nota: para que pueda ser instalado correctamente  vía `go get`, es necesario que también tengas el control de versiones [Baazar][]).
 
 ```
 $ go get menteslibres.net/luminos
 ```
 
-Clona el repo a `~/projects/golang.mx`, si deseas puedes usar la URL de tu fork
-o jugar con `git remote`. Estas instrucciones suponen que se utiliza un fork.
+Clona el repositorio a tu directorio de trabajo (por ejemplo: `~/projects/golang.mx`), si deseas puedes usar la URL de tu fork o jugar con `git remote`. 
 
 ```
 $ cd ~/projects
@@ -42,12 +43,15 @@ $ luminos -c settings.yaml run
 ```
 
 Finalmente, abre [127.0.0.1:9100](http://127.0.0.1:9100) en tu navegador
-preferido y
-[resuelve una tarea](https://github.com/menteslibres/golang.mx/issues).
+preferido y [resuelve una tarea](https://github.com/menteslibres/golang.mx/issues).
 
 [1]: http://golang.mx
 [2]: https://menteslibres.net/luminos/download
 [3]: https://menteslibres.net/luminos
+[Go]: http://golang.org "The Go Programming Language"
+[tutorial]: http://golang.mx/tutoriales/como-instalar-golang
+[Baazar]: http://bazaar.canonical.com/en/
+
 
 > Copyright (c) 2013 Autores de golang.mx.
 >
