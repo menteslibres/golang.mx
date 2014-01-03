@@ -25,7 +25,7 @@ page:
     menu:
       - { text: "Proyectos", url: "/proyectos" }
       - { text: "Tutoriales", url: "/tutoriales" }
-      - { text: "Foro", url: "https://groups.google.com/forum/#!forum/golang-mx" }
+      - { text: "Reuniones", url: "/reuniones" }
       - { text: "Go+", url: "https://plus.google.com/communities/110325783890611262108" }
 
     # Top-right navigation helper.
