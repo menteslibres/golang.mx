@@ -147,6 +147,49 @@ footer a {
   text-indent: -99999px;
 }
 
+.content h1 {
+  font: normal 38px/40px 'prxnv_b', sans-serif;
+  color: #a44639;
+  display: block;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.content h2 {
+  font: normal 28px/35px 'prxnv_b', sans-serif;
+  color: #2c497f;
+  display: block;
+  margin: 50px 0 15px 0;
+  text-align: left;
+}
+
+.content h3 {
+  font: normal 24px/28px 'prxnv_b', sans-serif;
+  color: #a44639;
+  display: block;
+  margin: 40px 0 15px 0;
+  text-align: left;
+}
+
+.content p {
+  font: normal 18px/22px 'prxnv_sb', sans-serif;
+  color: #323232;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.content a, .content p em, .content p i {
+  color: #a44639;
+}
+
+.content p b, .content p strong, .content p code {
+  color: #2c497f;
+}
+
+span.operator, span.package, span.typename {
+  color: #eeeff0 !important;
+}
+
 /*Modules*/
 
 header {
@@ -198,6 +241,9 @@ section.intro {
   display: block;
   float: left;
   width: 100%;
+  margin: 40px 0 30px 0;
+  border-top: 1px solid #999;
+  padding: 30px 0;
 }
 
 ul {
@@ -250,6 +296,36 @@ footer {
   float: left;
 }
 
+pre {
+  margin: 25px 0;
+}
+
+.content ul {
+  list-style: disc outside none;  
+}
+
+.content ul li {
+  display: block;
+  width: 100%;
+  font: normal 18px/22px 'prxnv_sb', sans-serif;
+  color: #323232;
+}
+
+.main-content {
+  width: 75%;
+  float: left;
+}
+
+aside {
+  width: 20%;
+  float: right;
+  display: block;
+}
+
+.main-content.full {
+  width: 100% !important;  
+}
+
 /*Effects & Transitions*/
 
 .fade {
@@ -266,7 +342,7 @@ footer {
 
 @media screen and (max-width: 568px) {
 
-  h1 {
+  header h1 {
     float: none;
     margin: 0 auto;
   }
@@ -299,7 +375,17 @@ footer {
   ul li, p.doubts, .gophers {
     width: 100%;
   }
-
+  
+  .content {
+    border-top: none !important;  
+  }
+  
+  aside, .main-content {
+    width: 100% !important;
+  }
+  
+  
+  
   footer a {
     width: 100%;
     display: block;

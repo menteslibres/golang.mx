@@ -75,31 +75,29 @@
       </section>
     {{ else }}
       <section class="content">
-
-        <div class="row">
-          {{ if .SideMenu }}
-            {{ if .Content }}
-              <div class="span3">
-                  <ul class="nav nav-list menu">
-                    {{ range .SideMenu }}
-                      <li>
-                        <a href="{{ url .link }}">{{ .text }}</a>
-                      </li>
-                    {{ end }}
-                  </ul>
-              </div>
-              <div class="span8">
-                {{ .ContentHeader }}
-
-                {{ .Content }}
-
-                {{ .ContentFooter }}
-              </div>
-            {{ else }}
-              <div class="span11">
-                {{ if .CurrentPage }}
-                  <h1>{{ .CurrentPage.text }}</h1>
+        {{ if .SideMenu }}
+          {{ if .Content }}
+            <aside>
+              <ul class="nav nav-list menu">
+                {{ range .SideMenu }}
+                  <li>
+                    <a href="{{ url .link }}">{{ .text }}</a>
+                  </li>
                 {{ end }}
+              </ul>
+            </aside>
+            <div class="main-content">
+              {{ .ContentHeader }}
+      
+              {{ .Content }}
+      
+              {{ .ContentFooter }}
+            </div>
+          {{ else }}
+            <div class="main-content">
+              {{ if .CurrentPage }}
+                <h1>{{ .CurrentPage.text }}</h1>
+              {{ end }}
                 <ul class="nav nav-list menu">
                   {{ range .SideMenu }}
                     <li>
@@ -107,19 +105,17 @@
                     </li>
                   {{ end }}
                 </ul>
-              </div>
-            {{ end }}
-          {{ else }}
-            <div class="span11">
-              {{ .ContentHeader }}
-
-              {{ .Content }}
-
-              {{ .ContentFooter }}
             </div>
           {{ end }}
-        </div>
-
+          {{ else }}
+          <div class="main-content full">
+            {{ .ContentHeader }}
+      
+            {{ .Content }}
+      
+            {{ .ContentFooter }}
+          </div>
+        {{ end }}
       </section>
 
     {{ end }}
