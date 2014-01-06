@@ -88,9 +88,9 @@
             </aside>
             <div class="main-content">
               {{ .ContentHeader }}
-      
+
               {{ .Content }}
-      
+
               {{ .ContentFooter }}
             </div>
           {{ else }}
@@ -110,9 +110,9 @@
           {{ else }}
           <div class="main-content full">
             {{ .ContentHeader }}
-      
+
             {{ .Content }}
-      
+
             {{ .ContentFooter }}
           </div>
         {{ end }}
@@ -121,8 +121,8 @@
     {{ end }}
 
     <footer>
-      <a href="https://github.com/menteslibres/golang.mx">¿Quieres hackear éste sitio?</a>
-      <a class="intangible" href="">Powered by Intangible</a>
+      <a href="https://github.com/menteslibres/golang.mx" target="_blank">¿Quieres hackear éste sitio?</a>
+      <a class="intangible" href="http://www.intangible.mx" target="_blank">Patrocinado por Intangible</a>
     </footer>
 
     {{ if setting "page/body/scripts/footer" }}
