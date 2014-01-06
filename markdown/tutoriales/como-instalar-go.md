@@ -165,15 +165,15 @@ en la URL <https://github.com/menteslibres/gotestpkg>.
 
 ```
 $ go get github.com/menteslibres/gotestpkg
-package github.com/menteslibres/gotestpkg: cannot download, $GOPATH not set. 
+package github.com/menteslibres/gotestpkg: cannot download, $GOPATH not set.
 For more details see: go help gopath
 ```
 
-El primer mensaje que nos da `go get` es un error al intentar descargar el paquete. 
-Una convención utilizada por las herramientas go tools es que deberá tener 
-establecido un directorio donde se puedan almacenar todos los paquetes 
-adicionales que se vayan a usar, así como una variable de entorno $GOPATH 
-apuntándolo. Generalmente se utiliza el directorio `$HOME/go` o `~/go`, a 
+El primer mensaje que nos da `go get` es un error al intentar descargar el paquete.
+Una convención utilizada por las herramientas go tools es que deberá tener
+establecido un directorio donde se puedan almacenar todos los paquetes
+adicionales que se vayan a usar, así como una variable de entorno $GOPATH
+apuntándolo. Generalmente se utiliza el directorio `$HOME/go` o `~/go`, a
 continuación crearemos dicho directorio, así como también definiremos $GOPATH:
 
 ```sh
@@ -271,10 +271,10 @@ Puedes continuar con [How to write Go Code][6] y al término seguir con
 ## Alternativas de instalación
 
 También se pueden usar los instaladores según el sistema operativo: en
-Microsoft Windows (extensión `.msi`) o para Mac OSX (extensión `.pkg`). 
+Microsoft Windows (extensión `.msi`) o para Mac OSX (extensión `.pkg`).
 A la fecha [Go][1] ya se está integrando a las distribuciones de Linux/BSD
- a través de sus administradores de paquetes: apt-get, yum, pkg_add, etc. 
- Deberías tomar en cuenta que quizás tengas que incluir las variables $GOPATH y 
+ a través de sus administradores de paquetes: apt-get, yum, pkg_add, etc.
+ Deberías tomar en cuenta que quizás tengas que incluir las variables $GOPATH y
 $GOROOT mencionadas en éste tutorial.
 
 ## Lecturas recomendadas
