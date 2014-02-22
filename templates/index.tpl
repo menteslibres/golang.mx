@@ -45,11 +45,11 @@
       </section>
 
       <section class="calendar">
-        <p>¿Te interesa aprender más de Go? Revisa nuestro <a href="">calendario</a> y asiste a nuestros eventos</p>
+        <p>¿Te interesa aprender o practicar Go? ¡Estemos en contacto!</p>
       </section>
       <section class="contribute">
         <h2>Contribuye</h2>
-        <p>Contribuir al sitio y a la comunidad es muy fácil</p>
+        <p>Contribuir es sencillo</p>
         <ul>
           <li>
             <div class="step fork"></div>
@@ -122,7 +122,6 @@
 
     <footer>
       <a href="https://github.com/menteslibres/golang.mx" target="_blank">¿Quieres hackear éste sitio?</a>
-      <a class="intangible" href="http://www.intangible.mx" target="_blank">Patrocinado por Intangible</a>
     </footer>
 
     {{ if setting "page/body/scripts/footer" }}
