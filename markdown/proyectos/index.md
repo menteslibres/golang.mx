@@ -3,6 +3,8 @@
 Esta es una lista de los proyectos creados o contribuídos por usuarios de Go en
 México.
 
+* [boletia/conekta-go](https://github.com/Boletia/conekta-go) Wrapper para el
+API v0.3.0 de [Conekta](http://conekta.io).
 * [upper.io/db](https://upper.io/db) Es un paquete que facilita la interacción
 con bases de datos MySQL, SQLite, PostgreSQL y MongoDB.
 * [gosexy/redis](https://menteslibres.net/gosexy/redis) Es una libreria cliente
