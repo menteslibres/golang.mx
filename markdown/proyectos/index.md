@@ -9,6 +9,8 @@ API v0.3.0 de [Conekta](http://conekta.io).
 con bases de datos MySQL, SQLite, PostgreSQL y MongoDB.
 * [gosexy/redis](https://menteslibres.net/gosexy/redis) Es una libreria cliente
 para [redis-server](http://redis.io/clients).
+* [hybridgroup/gobot](https://github.com/hybridgroup/gobot) Framework para robótica y computacioón física (arduino, beaglebone, ardrone, leap motion, spark, sphero, openCV...) 
+
 
 Tu proyecto puede ser incluído, agrégalo en el [repositorio
 git](http://github.com/menteslibres/golang.mx) como [pull request][1].
